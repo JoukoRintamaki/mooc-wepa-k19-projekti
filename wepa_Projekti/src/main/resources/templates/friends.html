@@ -15,14 +15,15 @@
 </ul>
 <p>Friends Requests:</p>
 <ul>
-    <li th:each="notAcceptedFriend : ${account.notAcceptedFriends}">
-        <a th:text="${notAcceptedFriend.name}" th:href="notAcceptedFriend.profilename"/>
+    <li th:each="friendRequest : ${account.friendRequests}">
+        <a th:text="${friendRequest.key.name}" th:href="friendRequest.key.profilename"/>
+        <p th:text="${#temporals.format(friendRequest.value, 'd.M.yyyy H:mm')}"/>
         <form th:action="@{friends/accept}" method="post">
-            <input type="hidden" name="id" th:value="${friend.id}">
+            <input type="hidden" name="id" th:value="${friendRequest.key.id}">
             <button type="submit" class="btn btn-primary">ACCEPT</button>
         </form>
         <form th:action="@{friends/deny}" method="post">
-            <input type="hidden" name="id" th:value="${friend.id}">
+            <input type="hidden" name="id" th:value="${friendRequest.key.id}">
             <button type="submit" class="btn btn-primary">DENY</button>
         </form>
     </li>

@@ -20,9 +20,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // sallitaan framejen käyttö
+        http.csrf().disable();
         http.headers().frameOptions().sameOrigin();
         http.authorizeRequests()
-                .antMatchers("/").permitAll()
+                .antMatchers("/","/h2-console","/h2-console/**","/accounts").permitAll()
                 .anyRequest().authenticated().and()
                 .formLogin().permitAll()
                 .and()
