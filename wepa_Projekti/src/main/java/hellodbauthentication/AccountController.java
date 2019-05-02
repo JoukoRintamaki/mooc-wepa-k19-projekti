@@ -15,11 +15,12 @@ public class AccountController {
     @Autowired
     PasswordEncoder passwordEncoder;
 
+    /*
     @GetMapping("/accounts")
     public String list(Model model) {
         model.addAttribute("accounts", accountRepository.findAll());
         return "accounts";
-    }
+    }*/
 
     @PostMapping("/accounts")
     public String add(
@@ -29,10 +30,10 @@ public class AccountController {
             @RequestParam String profilename
     ) {
         if (accountRepository.findByUsername(username) != null) {
-            return "redirect:/accounts";
+            return "redirect:/";
         }
         Account a = new Account(username, passwordEncoder.encode(password), name, profilename);
         accountRepository.save(a);
-        return "redirect:/accounts";
+        return "redirect:/";
     }
 }

@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
-public class DefaultController {
+public class ProfileController {
     @Autowired
     private AccountRepository accountRepository;
+    @Autowired
+    private MessageRepository messageRepository;
 
-    @GetMapping("*")
-    public String handleDefault() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication instanceof AnonymousAuthenticationToken)
-            return "index";
-        else
-            return "redirect:" + accountRepository.findByUsername(authentication.getName()).getProfilename();
+    @GetMapping("/{profilename}")
+    public String getProfilePage(Model model, @PathVariable String profilename) {
+        model.addAttribute("account", accountRepository.findByprofilename(profilename));
+        model.addAttribute("messages", messageRepository.findAll());
+        return "profile";
     }
 }

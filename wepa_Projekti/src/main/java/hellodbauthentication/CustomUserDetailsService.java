@@ -11,7 +11,6 @@ import java.util.Arrays;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
-
     @Autowired
     private AccountRepository accountRepository;
 
@@ -21,7 +20,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         if (account == null) {
             throw new UsernameNotFoundException("No such user: " + username);
         }
-
         return new org.springframework.security.core.userdetails.User(
                 account.getUsername(),
                 account.getPassword(),
