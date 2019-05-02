@@ -3,6 +3,7 @@
 <head th:replace="fragments/layout :: head"/>
 <body>
 <div th:replace="fragments/layout :: header(name=${account.name},profilename=${account.profilename})"/>
+<p th:text="${account.name}"></p>
 <ol>
     <li th:each="message : ${messages}">
         <p th:text="${message.sender.username}"></p>

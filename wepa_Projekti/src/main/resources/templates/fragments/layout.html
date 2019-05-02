@@ -27,23 +27,27 @@
             defer
     ></script>
 </head>
-<header th:fragment="header">
+<header th:fragment="header(name,profilename)">
     <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="/">Navbar</a>
+        <!--<a class="navbar-brand" href="/">Navbar</a>-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a th:text="${name}" th:href="${profilename}" class="nav-link"/>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Wall</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/accounts">Accounts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/messages">Link</a>
+                    <a class="nav-link" href="/messages">Messages</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
+
             </ul>
         </div>
         <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">

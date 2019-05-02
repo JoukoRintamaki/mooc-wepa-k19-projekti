@@ -5,7 +5,17 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="fragments/layout :: head"/>
 <body>
-<div th:replace="fragments/layout :: header"/>
+<form sec:authorize="!isAuthenticated()" method="POST" th:action="@{/login}">
+    <div class="form-row">
+        <div class="col">
+            <input class="form-control" id="username" type="text" name="username" placeholder="Username"/>
+        </div>
+        <div class="col">
+            <input class="form-control" id=password type="password" name="password" placeholder="Password"/>
+        </div>
+        <input type="submit" value="Log In" class="btn btn-primary"/>
+    </div>
+</form>
 <form sec:authorize="!isAuthenticated()" method="POST" th:action="@{/accounts}">
     <h1>Sign Up</h1>
     <div class="form-group">
