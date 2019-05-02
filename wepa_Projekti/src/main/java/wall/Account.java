@@ -1,4 +1,4 @@
-package hellodbauthentication;
+package wall;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

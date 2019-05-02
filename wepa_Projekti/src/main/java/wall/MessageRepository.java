@@ -1,4 +1,4 @@
-package hellodbauthentication;
+package wall;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
