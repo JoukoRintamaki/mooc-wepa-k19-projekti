@@ -37,6 +37,9 @@
                 <li sec:authorize="isAuthenticated()" class="nav-item">
                     <a th:text="${name}" th:href="${profilename}" class="nav-link"/>
                 </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a th:text="Friends" th:href="friends" class="nav-link"/>
+                </li>
             </ul>
         </div>
         <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">

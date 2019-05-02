@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout :: head"/>
+<body>
+<div th:replace="fragments/layout :: header(name=${account.name},profilename=${account.profilename})"/>
+<p>Friends:</p>
+<ul>
+    <li th:each="friend : ${account.friends}">
+        <a th:text="${friend.name}" th:href="friend.profilename"/>
+        <form th:action="@{/friends/remove}" method="post">
+            <input type="hidden" name="id" th:value="${friend.id}">
+            <button type="submit!" class="btn btn-primary">REMOVE</button>
+        </form>
+    </li>
+</ul>
+<p>Friends Requests:</p>
+<ul>
+    <li th:each="notAcceptedFriend : ${account.notAcceptedFriends}">
+        <a th:text="${notAcceptedFriend.name}" th:href="notAcceptedFriend.profilename"/>
+        <form th:action="@{friends/accept}" method="post">
+            <input type="hidden" name="id" th:value="${friend.id}">
+            <button type="submit" class="btn btn-primary">ACCEPT</button>
+        </form>
+        <form th:action="@{friends/deny}" method="post">
+            <input type="hidden" name="id" th:value="${friend.id}">
+            <button type="submit" class="btn btn-primary">DENY</button>
+        </form>
+    </li>
+</ul>
+</body>
+<p>Find Friends</p>
+<ul>
+    <li th:each="account: ${accounts}">
+        <a th:text="${account.name}" th:href="${account.profilename}"/>
+        <form th:action="@{friends/request}" method="post">
+            <input type="hidden" name="id" th:value="${account.id}">
+            <button type="submit" class="btn btn-primary">REQUEST</button>
+        </form>
+    </li>
+</ul>
+</html>
