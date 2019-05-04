@@ -9,5 +9,5 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
 
     Account findByprofilename(String profilename);
 
-    List<Account> findBynameContaining(String query);
+    List<Account> findBynameIgnoreCaseContaining(String query);
 }

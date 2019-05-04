@@ -6,8 +6,11 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Data
@@ -17,7 +20,11 @@ public class Message extends AbstractPersistable<Long> {
     @ManyToOne
     private Account sender;
     @ManyToOne
-    private Account receiver;
+    private Account recipient;
     private String content;
     private LocalDateTime createDate;
+    @ManyToMany
+    private Set<Account> likes;
+    @ManyToMany
+    private Set<Message> answers;
 }

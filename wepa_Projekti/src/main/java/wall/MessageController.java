@@ -17,16 +17,43 @@ public class MessageController {
     private AccountRepository accountRepository;
 
     @PostMapping("/messages")
-    public String add(@RequestParam String content) {
+    public String add(Authentication authentication, @RequestParam String content, @RequestParam Long id) {
+        Account account = accountRepository.getOne(id);
         if (content != null && !content.trim().isEmpty()) {
             Message msg = new Message();
             msg.setContent(content.trim());
-            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-            String username = auth.getName();
+            String username = authentication.getName();
+            msg.setSender(accountRepository.findByUsername(username));
+            msg.setCreateDate(LocalDateTime.now());
+            msg.setRecipient(account);
+            messageRepository.save(msg);
+        }
+        return "redirect:/" + account.getProfilename();
+    }
+
+    @PostMapping("/messages/like")
+    public String addLike(Authentication authentication,
+                          @RequestParam Long id) {
+        Message message = messageRepository.getOne(id);
+        String username = authentication.getName();
+        message.getLikes().add(accountRepository.findByUsername(username));
+        messageRepository.save(message);
+        return "redirect:/" + message.getRecipient().getProfilename();
+    }
+
+    @PostMapping("/messages/answer")
+    public String addLike(Authentication authentication, @RequestParam String content, @RequestParam Long id) {
+        Message message = messageRepository.getOne(id);
+        if (content != null && !content.trim().isEmpty()) {
+            Message msg = new Message();
+            msg.setContent(content.trim());
+            String username = authentication.getName();
             msg.setSender(accountRepository.findByUsername(username));
             msg.setCreateDate(LocalDateTime.now());
             messageRepository.save(msg);
+            message.getAnswers().add(msg);
+            messageRepository.save(message);
         }
-        return "redirect:/";
+        return "redirect:/" + message.getRecipient().getProfilename();
     }
 }

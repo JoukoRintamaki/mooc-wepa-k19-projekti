@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/layout :: head"/>
-<body>
+<body class="small">
 <div th:replace="fragments/layout :: header(name=${account.name},profilename=${account.profilename})"/>
 <p>Friends:</p>
 <ul>
     <li th:each="friend : ${account.friends}">
-        <a th:text="${friend.name}" th:href="friend.profilename"/>
+        <a th:text="${friend.name}" th:href="${friend.profilename}"/>
         <form th:action="@{/friends/remove}" method="post">
             <input type="hidden" name="id" th:value="${friend.id}">
-            <button type="submit!" class="btn btn-primary">REMOVE</button>
+            <button type="submit!" class="btn btn-danger">REMOVE</button>
         </form>
     </li>
 </ul>
 <p>Friends Requests:</p>
 <ul>
     <li th:each="friendRequest : ${account.friendRequests}">
-        <a th:text="${friendRequest.key.name}" th:href="friendRequest.key.profilename"/>
+        <a th:text="${friendRequest.key.name}" th:href="${friendRequest.key.profilename}"/>
         <p th:text="${#temporals.format(friendRequest.value, 'd.M.yyyy H:mm')}"/>
-        <form th:action="@{friends/accept}" method="post">
+        <form th:action="@{friends}" method="post">
             <input type="hidden" name="id" th:value="${friendRequest.key.id}">
-            <button type="submit" class="btn btn-primary">ACCEPT</button>
-        </form>
-        <form th:action="@{friends/deny}" method="post">
-            <input type="hidden" name="id" th:value="${friendRequest.key.id}">
-            <button type="submit" class="btn btn-primary">DENY</button>
+            <button type="submit" name="action" value="accept" class="btn btn-success">ACCEPT</button>
+            <button type="submit" name="action" value="deny" class="btn btn-danger">DENY</button>
         </form>
     </li>
 </ul>
 </body>
-<p>Find Friends</p>
+<p>Find New Friends:</p>
+<form th:action="@{friends}" method="get">
+    <input type="text" name="query"/>
+    <button type="submit" class="btn btn-primary">SEARCH FRIEND</button>
+</form>
 <ul>
-    <li th:each="account: ${accounts}">
+    <li th:each="account: ${findFriends}">
         <a th:text="${account.name}" th:href="${account.profilename}"/>
         <form th:action="@{friends/request}" method="post">
             <input type="hidden" name="id" th:value="${account.id}">

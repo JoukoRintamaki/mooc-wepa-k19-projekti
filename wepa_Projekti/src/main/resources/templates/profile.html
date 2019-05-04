@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/layout :: head"/>
-<body>
-<div th:replace="fragments/layout :: header(name=${account.name},profilename=${account.profilename})"/>
-<p th:text="${account.name}"></p>
-<ol>
-    <li th:each="message : ${messages}">
-        <p th:text="${message.sender.username}"></p>
-        <p th:text="${#temporals.format(message.createDate, 'dd.MM.yyyy HH:mm')}"></p>
-        <p th:text="${message.content}"></p>
-    </li>
-</ol>
-<form method="POST" th:action="@{/messages}" action="/messages">
-    <input type="text" name="receiver"/>
-    <input type="text" name="content"/>
-    <input type="submit" value="Add!"/>
-</form>
+<body class="small">
+<div th:replace="fragments/layout :: header(name=${currentUser.name},profilename=${currentUser.profilename})"/>
+<div class="container">
+    <div class="text-center m-5">
+    <span th:if="${account.profilePhoto != null}">
+        <img th:attr="src=@{photos/{id}(id=${account.profilePhoto.id})}"/>
+    </span>
+        <span th:text="${account.name}"/>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <form class="form" method="POST" th:action="@{/messages}" action="/messages">
+                <input type="hidden" name="id" th:value="${account.id}"/>
+                <input class="form-control form-control-sm" type="text" name="content"
+                       placeholder="Write Message..."/>
+                <input class="btn btn-primary btn-sm mb-5" type="submit" value="Post Message"/>
+            </form>
+            <div class="card m-1 p-1" th:each="message : ${messages}">
+                <p>
+                    <span th:text="${message.sender.name}"/>
+                    <span th:text="${#temporals.format(message.createDate, 'd.M.yyyy HH:mm')}+': '"/>
+                    <span th:text="${message.content}"></span>
+                </p>
+                <form class="form" method="POST" th:action="@{/messages/like}">
+                    <input type="hidden" name="id" th:value="${message.id}"/>
+                    <input class="mb-5 btn btn-primary btn-sm" type="submit"
+                           th:value="'Like Message. Likes: '+${#sets.size(message.likes)}"/>
+                </form>
+                <form class="form" method="POST" th:action="@{/messages/answer}">
+                    <input type="hidden" name="id" th:value="${message.id}"/>
+                    <input class="form-control form-control-sm" type="text" name="content"
+                           placeholder="Write Answer..."/>
+                    <input class="btn btn-primary btn-sm mb-3" type="submit" value="Post Answer"/>
+                </form>
+                <div class="card m-1 p-1" th:each="answer : ${message.answers}">
+                    <p>
+                        <span th:text="${answer.sender.name}"/>
+                        <span th:text="${#temporals.format(answer.createDate, 'd.M.yyyy HH:mm')}+': ' "/>
+                        <span th:text="${answer.content}"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card-columns">
+                <div class="card" th:each="photo : ${account.photos}">
+                    <img class="card-img-top" th:attr="src=@{photos/{id}(id=${photo.id})}"/>
+                    <div class="card-body">
+                        <p class="card-text" th:text="${photo.description}"/>
+                        <form class="form" method="POST" th:action="@{/photo/comment}">
+                            <input type="hidden" name="id" th:value="${photo.id}"/>
+                            <input class="form-control form-control-sm" type="text" name="content"
+                                   placeholder="Write Comment..."/>
+                            <input class="btn btn-primary btn-sm mb-3" type="submit" value="Post Comment"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

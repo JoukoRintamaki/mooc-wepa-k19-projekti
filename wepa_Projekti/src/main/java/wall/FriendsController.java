@@ -18,45 +18,33 @@ public class FriendsController {
     private AccountRepository accountRepository;
 
     @GetMapping("/friends")
-    public String getProfilePage(Model model, Authentication authentication) {
-        model.addAttribute("account", accountRepository.findByUsername(authentication.getName()));
-        model.addAttribute("accounts", accountRepository.findAll());
-        return "friends";
-    }
-
-    /*@GetMapping("/friends")
-    public String getProfilePageAndQueryResult(Model model, Authentication authentication, @RequestParam String query) {
-        List<Account> accounts = accountRepository.findBynameContaining(query);
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        Account account = accountRepository.findByUsername(auth.getName());
-        if(accounts.contains(account)){
-            accounts.remove(account);
+    public String getProfilePageAndQueryResult(Model model,
+                                               Authentication authentication,
+                                               @RequestParam(required = false) String query) {
+        if (query != null && !query.isEmpty()) {
+            List<Account> accounts = accountRepository.findBynameIgnoreCaseContaining(query);
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            Account account = accountRepository.findByUsername(auth.getName());
+            if (accounts.contains(account)) {
+                accounts.remove(account);
+            }
+            model.addAttribute("findFriends", accounts);
         }
-        model.addAttribute("findFriends",accounts);
         model.addAttribute("account", accountRepository.findByUsername(authentication.getName()));
         model.addAttribute("accounts", accountRepository.findAll());
         return "friends";
-    }*/
-
-    @PostMapping("/friends/accept")
-    public String acceptRequest(@RequestParam Long id) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        Account user = accountRepository.findByUsername(auth.getName());
-        Account friendCandinate = accountRepository.getOne(id);
-        user.getFriends().add(friendCandinate);
-        user.getFriendRequests().remove(friendCandinate);
-        accountRepository.save(user);
-        friendCandinate.getFriends().add(user);
-        accountRepository.save(friendCandinate);
-        return "redirect:/friends";
     }
 
-    @PostMapping("/friends/deny")
-    public String deniedRequest(@RequestParam Long id) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        Account user = accountRepository.findByUsername(auth.getName());
-        Account friendCandinate = accountRepository.getOne(id);
-        user.getFriendRequests().remove(friendCandinate);
+    @PostMapping("/friends")
+    public String acceptRequest(Authentication authentication, @RequestParam Long id, @RequestParam String action) {
+        Account user = accountRepository.findByUsername(authentication.getName());
+        Account friendRequester = accountRepository.getOne(id);
+        if (action.equals("accept")) {
+            user.getFriends().add(friendRequester);
+            friendRequester.getFriends().add(user);
+            accountRepository.save(friendRequester);
+        }
+        user.getFriendRequests().remove(friendRequester);
         accountRepository.save(user);
         return "redirect:/friends";
     }

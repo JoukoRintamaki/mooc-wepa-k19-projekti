@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ee990bc5-4180-475b-96e4-d39c95470d84" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/wall/Photo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wall/PhotoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wall/PhotoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/photos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/wall/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wall/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/wall/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wall/AccountRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/wall/FriendsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wall/FriendsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wall/HelloDbAuthenticationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wall/HelloDbAuthenticationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wall/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wall/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wall/HelloDbAuthenticationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wall/WallApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wall/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wall/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wall/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wall/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wall/MessageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wall/MessageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wall/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wall/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/friends.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/friends.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,37 +36,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/friends.html">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="19" column="32" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="466">
+              <caret line="52" column="87" lean-forward="true" selection-start-line="52" selection-start-column="87" selection-end-line="52" selection-end-column="87" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wall/FriendsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="86" />
+            <state relative-caret-position="672">
+              <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wall/MessageRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wall/ProfileController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="508">
+              <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wall/FriendsController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wall/PhotoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wall/DefaultController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="106">
+              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,37 +92,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/wall/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="408">
+              <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wall/HelloDbAuthenticationApplication.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wall/MessageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding>
-                <element signature="e#319#320#0" expanded="true" />
-                <element signature="e#395#396#0" expanded="true" />
-                <element signature="e#250#251#0" expanded="true" />
-                <element signature="e#333#334#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="220">
+              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wall/Account.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/photos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1592#1593#0" expanded="true" />
-                <element signature="e#1655#1656#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="432">
+              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -98,7 +119,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/wall/AccountController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
+            <state relative-caret-position="336">
               <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="68" />
             </state>
           </provider>
@@ -108,19 +129,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/wall/AccountRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <caret line="11" column="63" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wall/CustomUserDetailsService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -137,6 +149,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>thymeleaf-extras-springsecurity5</find>
+      <find>autofocus</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,7 +174,6 @@
         <option value="$PROJECT_DIR$/src/main/java/hellodbauthentication/HelloDbAuthenticationApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/hellodbauthentication/AccountRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/wall.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/messages.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/accounts.html" />
         <option value="$PROJECT_DIR$/src/main/java/hellodbauthentication/ProfileController.java" />
@@ -170,15 +182,27 @@
         <option value="$PROJECT_DIR$/src/main/java/hellodbauthentication/MessageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/hellodbauthentication/AccountController.java" />
         <option value="$PROJECT_DIR$/src/main/java/wall/FindFriendsController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/layout.html" />
         <option value="$PROJECT_DIR$/src/main/java/wall/FriendRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/wall/SecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/wall/Account.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/friends.html" />
         <option value="$PROJECT_DIR$/src/main/java/wall/HelloDbAuthenticationApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wall/WallApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/wall/AccountRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/wall/FriendsController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/wall/PhotoRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wall/PhotoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wall/Photo.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/1.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/photos.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/friends.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/wall/Account.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wall/MessageRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/layout.html" />
+        <option value="$PROJECT_DIR$/src/main/java/wall/ProfileController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wall/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wall/MessageController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/profile.html" />
       </list>
     </option>
   </component>
@@ -341,6 +365,11 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="&lt;/div&gt;" />
+    </option>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -356,7 +385,7 @@
   <component name="RunManager" selected="Spring Boot.MyApplication">
     <configuration name="HelloDbAuthenticationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="wepa_Projekti" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="wall.HelloDbAuthenticationApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="wall.WallApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -378,25 +407,25 @@
       <updated>1556527552016</updated>
       <workItem from="1556527555401" duration="32813000" />
       <workItem from="1556726716134" duration="24130000" />
-      <workItem from="1556810329107" duration="9015000" />
+      <workItem from="1556810329107" duration="70126000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65958000" />
+    <option name="totallyTimeSpent" value="127069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="79" y="38" width="2482" height="1411" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22272727" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19710743" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Dependency Viewer" weight="0.32939324" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41843972" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3144208" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -415,7 +444,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.16528925" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.10454545" />
       <window_info anchor="right" id="Bean Validation" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
     </layout>
@@ -460,39 +489,8 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/registration.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/messages.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/accounts.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/wall/MessageRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wall/MessageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="25" column="70" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="25" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wall/ProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.tmcproject.yml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#header#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -515,45 +513,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wall/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="25" column="74" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/friends.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wall/AccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -564,59 +527,293 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wall/Message.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/wall/WallApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wall/HelloDbAuthenticationApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="240">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
           <folding>
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#333#334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wall/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1592#1593#0" expanded="true" />
-            <element signature="e#1655#1656#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wall/DefaultController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="120">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wall/AccountRepository.java">
+    <entry file="uml://JAVA/wall">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>wall</OriginalElement>
+          <nodes>
+            <node x="0.0" y="388.0">wall.MessageController</node>
+            <node x="295.0" y="388.0">wall.PhotoController</node>
+            <node x="1187.4166666666665" y="0.0">wall.Photo</node>
+            <node x="151.5" y="286.0">wall.MessageRepository</node>
+            <node x="566.0" y="388.0">wall.CustomUserDetailsService</node>
+            <node x="60.90435606060589" y="194.0">wall.Message</node>
+            <node x="1240.0" y="388.0">wall.FriendsController</node>
+            <node x="0.0" y="475.0">wall.SecurityConfiguration</node>
+            <node x="922.0833333333333" y="286.0">wall.AccountRepository</node>
+            <node x="1175.4166666666665" y="92.0">wall.Account</node>
+            <node x="1535.0" y="388.0">wall.AccountController</node>
+            <node x="368.0" y="475.0">wall.WallApplication</node>
+            <node x="945.0" y="388.0">wall.DefaultController</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="wall.AccountController" target="wall.Account">
+              <point x="91.66666666666674" y="-21.0" />
+              <point x="1764.1666666666667" y="368.0" />
+              <point x="1723.8333333333335" y="368.0" />
+              <point x="1723.8333333333335" y="154.0" />
+              <point x="1317.5" y="154.0" />
+              <point x="64.58333333333326" y="21.0" />
+            </edge>
+            <edge source="wall.Message" target="wall.Account">
+              <point x="0.0" y="-21.0" />
+              <point x="138.4043560606059" y="154.0" />
+              <point x="1188.3333333333335" y="154.0" />
+              <point x="-64.58333333333326" y="21.0" />
+            </edge>
+            <edge source="wall.MessageController" target="wall.Message">
+              <point x="-103.125" y="-21.0" />
+              <point x="34.375" y="368.0" />
+              <point x="63.25" y="368.0" />
+              <point x="63.25" y="256.0" />
+              <point x="86.73768939393926" y="256.0" />
+              <point x="-51.66666666666663" y="21.0" />
+            </edge>
+            <edge source="wall.PhotoController" target="wall.MessageRepository">
+              <point x="-62.75" y="-21.0" />
+              <point x="68.75" y="21.0" />
+            </edge>
+            <edge source="wall.AccountController" target="wall.AccountRepository">
+              <point x="-91.66666666666674" y="-21.0" />
+              <point x="1580.8333333333333" y="358.0" />
+              <point x="1174.1666666666665" y="358.0" />
+              <point x="114.58333333333326" y="21.0" />
+            </edge>
+            <edge source="wall.FriendsController" target="wall.AccountRepository">
+              <point x="-68.75" y="-21.0" />
+              <point x="1308.75" y="368.0" />
+              <point x="1128.3333333333333" y="368.0" />
+              <point x="68.75" y="21.0" />
+            </edge>
+            <edge source="wall.CustomUserDetailsService" target="wall.AccountRepository">
+              <point x="89.75" y="-21.0" />
+              <point x="835.25" y="368.0" />
+              <point x="1036.6666666666665" y="368.0" />
+              <point x="-22.91666666666663" y="21.0" />
+            </edge>
+            <edge source="wall.MessageRepository" target="wall.Message">
+              <point x="0.0" y="-21.0" />
+              <point x="289.0" y="266.0" />
+              <point x="190.07102272727252" y="266.0" />
+              <point x="51.66666666666666" y="21.0" />
+            </edge>
+            <edge source="wall.PhotoController" target="wall.AccountRepository">
+              <point x="62.75" y="-21.0" />
+              <point x="483.25" y="358.0" />
+              <point x="990.8333333333333" y="358.0" />
+              <point x="-68.75" y="21.0" />
+            </edge>
+            <edge source="wall.FriendsController" target="wall.Account">
+              <point x="68.75" y="-21.0" />
+              <point x="1446.25" y="174.0" />
+              <point x="1265.8333333333335" y="174.0" />
+              <point x="12.916666666666742" y="21.0" />
+            </edge>
+            <edge source="wall.DefaultController" target="wall.AccountRepository">
+              <point x="0.0" y="-21.0" />
+              <point x="22.916666666666742" y="21.0" />
+            </edge>
+            <edge source="wall.MessageController" target="wall.MessageRepository">
+              <point x="34.375" y="-21.0" />
+              <point x="171.875" y="368.0" />
+              <point x="220.25" y="368.0" />
+              <point x="-68.75" y="21.0" />
+            </edge>
+            <edge source="wall.AccountRepository" target="wall.Account">
+              <point x="0.0" y="-21.0" />
+              <point x="1059.5833333333333" y="174.0" />
+              <point x="1240.0" y="174.0" />
+              <point x="-12.916666666666742" y="21.0" />
+            </edge>
+            <edge source="wall.MessageController" target="wall.AccountRepository">
+              <point x="103.125" y="-21.0" />
+              <point x="240.625" y="348.0" />
+              <point x="944.9999999999999" y="348.0" />
+              <point x="-114.58333333333337" y="21.0" />
+            </edge>
+            <edge source="wall.Account" target="wall.Photo">
+              <point x="0.0" y="-21.0" />
+              <point x="0.0" y="21.0" />
+            </edge>
+            <edge source="wall.CustomUserDetailsService" target="wall.Account">
+              <point x="-89.75" y="-21.0" />
+              <point x="655.75" y="164.0" />
+              <point x="1214.1666666666665" y="164.0" />
+              <point x="-38.75" y="21.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="619.0" y="162.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        <state relative-caret-position="168">
+          <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/friends.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wall/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wall/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#header#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wall/PhotoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="60" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wall/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wall/AccountRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="63" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wall/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wall/FriendsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+        <state relative-caret-position="672">
+          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/photos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wall/ProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wall/MessageRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wall/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="52" column="87" lean-forward="true" selection-start-line="52" selection-start-column="87" selection-end-line="52" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wall/PhotoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
