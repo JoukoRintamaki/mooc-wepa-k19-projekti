@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
@@ -20,7 +21,8 @@ public class Photo extends AbstractPersistable<Long> {
     @NotNull
     @NotEmpty
     private String description;
-    @Lob
+    //@Lob
+    @Column(length = 20971520)
     @NotNull
     @NotEmpty
     private byte[] content;
