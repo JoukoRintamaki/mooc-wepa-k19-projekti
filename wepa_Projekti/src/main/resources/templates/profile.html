@@ -5,14 +5,16 @@
 <div th:replace="fragments/layout :: header(name=${currentUser.name},profilename=${currentUser.profilename})"/>
 <div class="container">
     <div class="text-center m-5">
-    <span th:if="${account.profilePhoto != null}">
-        <img th:attr="src=@{photos/{id}(id=${account.profilePhoto.id})}"/>
-    </span>
-        <span th:text="${account.name}"/>
+        <div class="d-inline" th:text="${account.name}"/>
+        <div class="d-inline">
+            <img class="img-thumbnail" th:if="${account.profilePhoto != null}"
+                 th:attr="src=@{photos/{id}(id=${account.profilePhoto.id})}"
+                 width="100" height="100"/>
+        </div>
     </div>
     <div class="row">
         <div class="col-6">
-            <form class="form" method="POST" th:action="@{/messages}" action="/messages">
+            <form class="form" method="POST" th:action="@{/messages}">
                 <input type="hidden" name="id" th:value="${account.id}"/>
                 <input class="form-control form-control-sm" type="text" name="content"
                        placeholder="Write Message..."/>
@@ -50,12 +52,24 @@
                     <img class="card-img-top" th:attr="src=@{photos/{id}(id=${photo.id})}"/>
                     <div class="card-body">
                         <p class="card-text" th:text="${photo.description}"/>
+                        <form class="form" method="POST" th:action="@{/photo/like}">
+                            <input type="hidden" name="id" th:value="${photo.id}"/>
+                            <input class="mb-5 btn btn-primary btn-sm" type="submit"
+                                   th:value="'Like Photo. Likes: '+${#sets.size(photo.likes)}"/>
+                        </form>
                         <form class="form" method="POST" th:action="@{/photo/comment}">
                             <input type="hidden" name="id" th:value="${photo.id}"/>
                             <input class="form-control form-control-sm" type="text" name="content"
                                    placeholder="Write Comment..."/>
                             <input class="btn btn-primary btn-sm mb-3" type="submit" value="Post Comment"/>
                         </form>
+                        <div class="card m-1 p-1" th:each="message : ${photo.comments}">
+                            <p>
+                                <span th:text="${message.sender.name}"/>
+                                <span th:text="${#temporals.format(message.createDate, 'd.M.yyyy HH:mm')}+': '"/>
+                                <span th:text="${message.content}"></span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

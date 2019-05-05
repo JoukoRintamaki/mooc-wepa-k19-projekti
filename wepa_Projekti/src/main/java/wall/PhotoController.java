@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Controller
@@ -16,6 +19,8 @@ public class PhotoController {
     private AccountRepository accountRepository;
     @Autowired
     private PhotoRepository photoRepository;
+    @Autowired
+    private MessageRepository messageRepository;
 
     @GetMapping("/photos")
     public String getPhotos(Model model, Authentication authentication) {
@@ -46,7 +51,7 @@ public class PhotoController {
         Account currentUser = accountRepository.findByUsername(authentication.getName());
         if (Objects.equals(action, "remove")) {
             currentUser.getPhotos().remove(photoRepository.getOne(id));
-            if (currentUser.getProfilePhoto().getId() == id) {
+            if (currentUser.getProfilePhoto() != null && currentUser.getProfilePhoto().getId() == id) {
                 currentUser.setProfilePhoto(null);
             }
             accountRepository.save(currentUser);
@@ -63,5 +68,37 @@ public class PhotoController {
     @ResponseBody
     public byte[] get(@PathVariable Long id) {
         return photoRepository.getOne(id).getContent();
+    }
+
+    @PostMapping("/photo/like")
+    public String addLike(Authentication authentication,
+                          @RequestParam Long id,
+                          @RequestHeader(value = "Referer", required = false) final String referer
+    ) throws MalformedURLException {
+        Photo photo = photoRepository.getOne(id);
+        String username = authentication.getName();
+        photo.getLikes().add(accountRepository.findByUsername(username));
+        photoRepository.save(photo);
+        return "redirect:" + new URL(referer).getPath();
+    }
+
+    @PostMapping("/photo/comment")
+    public String addLike(Authentication authentication,
+                          @RequestParam String content,
+                          @RequestParam Long id,
+                          @RequestHeader(value = "Referer", required = false) final String referer
+    ) throws MalformedURLException {
+        Photo photo = photoRepository.getOne(id);
+        if (content != null && !content.trim().isEmpty()) {
+            Message msg = new Message();
+            msg.setContent(content.trim());
+            String username = authentication.getName();
+            msg.setSender(accountRepository.findByUsername(username));
+            msg.setCreateDate(LocalDateTime.now());
+            messageRepository.save(msg);
+            photo.getComments().add(msg);
+            photoRepository.save(photo);
+        }
+        return "redirect:" + new URL(referer).getPath();
     }
 }

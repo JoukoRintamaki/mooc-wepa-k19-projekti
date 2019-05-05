@@ -8,7 +8,6 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import java.time.LocalDateTime;
 import java.util.Set;
 

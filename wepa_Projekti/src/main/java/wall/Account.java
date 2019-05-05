@@ -28,6 +28,7 @@ public class Account extends AbstractPersistable<Long> {
     private String name;
     @NotNull
     @NotEmpty
+
     @Column(unique = true)
     private String profilename;
     @ManyToMany

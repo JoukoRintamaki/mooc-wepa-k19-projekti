@@ -3,14 +3,18 @@
 <head th:replace="fragments/layout :: head"/>
 <body class="small">
 <div th:replace="fragments/layout :: header(name=${currentUser.name},profilename=${currentUser.profilename})"/>
-<div class="container text-left mx-auto m-5">
+<div class="container text-left mx-auto m-5" th:if="${#sets.size(currentUser.photos)<10}">
     <form method="POST" th:action="@{photos}" enctype="multipart/form-data">
         <p>Add new photo.</p>
         <input type="text" class="form-control form-control-sm" name="description" id="description"
-               placeholder="Write photo description!"/>
-        <input type="file" class="form-control-file form-control-sm" name="file" id="file"/>
+               placeholder="Write photo description!"
+               required/>
+        <input type="file" class="form-control-file form-control-sm" name="file" id="file" required/>
         <input type="submit" class="btn btn-primary btn-sm" value="Add Photo!"/>
     </form>
+</div>
+<div class="container text-left mx-auto m-5" th:if="${#sets.size(currentUser.photos)>=10}">
+    <h1>Your PhotoAlbum is full.</h1>
 </div>
 <div class="container">
     <div class="card-columns">

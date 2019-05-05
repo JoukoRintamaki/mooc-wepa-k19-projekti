@@ -10,18 +10,18 @@
         <div class="col">
             <h1>Log In</h1>
             <form method="POST" th:action="@{/login}">
-                <input class="form-control" type="text" name="username" placeholder="Username"/>
-                <input class="form-control" type="password" name="password" placeholder="Password"/>
+                <input class="form-control" type="text" name="username" placeholder="Username" required/>
+                <input class="form-control" type="password" name="password" placeholder="Password" required/>
                 <input type="submit" value="Log In" class="btn btn-primary"/>
             </form>
         </div>
         <div class="col">
-            <form method="POST" th:action="@{/accounts}">
+            <form method="POST" th:action="@{/}" th:object="${account}">
                 <h1>Sign Up</h1>
-                <input class="form-control" type="text" name="username" placeholder="Username"/>
-                <input class="form-control" type="password" name="password" placeholder="Passoword"/>
-                <input class="form-control" type="text" name="name" placeholder="Full Name"/>
-                <input class="form-control" type="text" name="profilename" placeholder="Profile Name"/>
+                <input class="form-control" type="text" th:field="*{username}" placeholder="Username" required/>
+                <input class="form-control" type="password" th:field="*{password}" placeholder="Passoword" required/>
+                <input class="form-control" type="text" th:field="*{name}" placeholder="Full Name" required/>
+                <input class="form-control" type="text" th:field="*{profilename}" placeholder="Profile Name" required/>
                 <input type="submit" value="Sign Up" class="btn btn-primary"/>
             </form>
         </div>
